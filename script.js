@@ -22,10 +22,6 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
-function removeLibraryDisplay() {
-
-}
-
 function displayLibrary(myLibrary) {
     //clear out existing table
     const removeRows = document.querySelector('.bookTable');
