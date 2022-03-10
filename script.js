@@ -16,7 +16,6 @@ function addBookToLibrary() {
 
     //create new book object with form information
     const newBook = new Book(titleInput, authorInput, pagesInput, readStatusInput);
-    console.table(newBook);
 
     //feed the book object into array
     myLibrary.push(newBook);
@@ -42,15 +41,13 @@ function displayLibrary(myLibrary) {
         cellZero.innerHTML = myLibrary[i].title;
         cellOne.innerHTML = myLibrary[i].author;
         cellTwo.innerHTML = myLibrary[i].pages;
-        cellThree.innerHTML = `<button class="btnStatus">${myLibrary[i].readStatus}</button>`;
-        cellFour.innerHTML = `<button class="btnRemove">Remove</button>`;
+        cellThree.innerHTML = `<button class="btnStatus" data-row="${i}">${myLibrary[i].readStatus}</button>`;
+        cellFour.innerHTML = `<button class="btnRemove" data-row="${i}">Remove</button>`;
     }
 }
 
-const btn = document.querySelector('#btnSubmit');
-btn.addEventListener('click', () => {
+const btnSubmit = document.querySelector('#btnSubmit');
+btnSubmit.addEventListener('click', () => {
     addBookToLibrary();
     displayLibrary(myLibrary);
 });
-
-
