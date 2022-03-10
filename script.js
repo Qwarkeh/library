@@ -26,15 +26,34 @@ function removeLibraryDisplay() {
 
 }
 
-function displayLibrary(myLibrary){
+function displayLibrary(myLibrary) {
+    //clear out existing table
+    const removeRows = document.querySelector('.bookTable');
+    removeRows.innerHTML = "";
+    
+    //write the table
     for (i = 0; i < myLibrary.length; i++) {
-        //console.log(`${myLibrary[i].title}, ${myLibrary[i].author}, ${myLibrary[i].pages}, ${myLibrary[i].readStatus}`);
+        const bookTable= document.querySelector('.bookTable');
+        let row = bookTable.insertRow(i);
+        row.dataset.indexNumber = i;
 
-        //add to table
+        let cellZero = row.insertCell(0);
+        let cellOne = row.insertCell(1);
+        let cellTwo = row.insertCell(2);
+        let cellThree = row.insertCell(3);
+        let cellFour = row.insertCell(4);
+
+        cellZero.innerHTML = myLibrary[i].title;
+        cellOne.innerHTML = myLibrary[i].author;
+        cellTwo.innerHTML = myLibrary[i].pages;
+        cellThree.innerHTML = myLibrary[i].readStatus;
     }
 }
 
 const btn = document.querySelector('#btnSubmit');
 btn.addEventListener('click', () => {
     addBookToLibrary();
+    displayLibrary(myLibrary);
 });
+
+
