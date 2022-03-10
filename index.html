@@ -11,12 +11,13 @@
 <body>
     <div class="container">
         <table>
-            <tr>
+            <thead>
                 <th>Title</th>
                 <th>Author</th>
                 <th>Pages</th>
                 <th>Status</th>
-            </tr>
+            </thead>
+            <tbody></tbody>
         </table>
         <button>Add Book</button>
     </div>
@@ -31,6 +32,12 @@
 
             <label for="pagesInput">Pages:</label>
             <input type="number" name="pagesInput" id="pagesInput">
+            
+            <label for="radioRead">Read</label>
+            <input type="radio" name="readStatus" id="radioRead" value="read" checked>
+            
+            <label for="radioUnread">Unread</label> 
+            <input type="radio" name="readStatus" id="radioUnread" value="unread">
 
             <button id="btnSubmit" type="submit">Submit</button>
             <button id="btnCancel">Cancel</button>
