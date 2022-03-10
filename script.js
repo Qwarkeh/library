@@ -42,7 +42,8 @@ function displayLibrary(myLibrary) {
         cellZero.innerHTML = myLibrary[i].title;
         cellOne.innerHTML = myLibrary[i].author;
         cellTwo.innerHTML = myLibrary[i].pages;
-        cellThree.innerHTML = myLibrary[i].readStatus;
+        cellThree.innerHTML = `<button class="btnStatus">${myLibrary[i].readStatus}</button>`;
+        cellFour.innerHTML = `<button class="btnRemove">Remove</button>`;
     }
 }
 
